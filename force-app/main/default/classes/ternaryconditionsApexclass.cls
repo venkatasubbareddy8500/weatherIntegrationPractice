@@ -40,7 +40,8 @@ public class ternaryconditionsApexclass {
         }
         update insertedCases;
     }
-    //comment lines
+    //Comment Lines one 
+
     public static void performingInputParametersMethod(inputParametersMethod some1){ 
         system.debug('some-> ' + some1.inputName);
         system.debug('some-> ' + some1.inputNumber);
