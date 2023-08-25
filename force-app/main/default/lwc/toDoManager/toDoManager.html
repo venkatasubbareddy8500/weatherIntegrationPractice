@@ -1,0 +1,60 @@
+<template>
+	<lightning-layout multiple-rows class="slds-align_absolute-center slds-text-align_center someContainer ">
+		<lightning-layout-item size="12">
+			<!-- This one is for displaying current time -->
+            <div class="time">
+				{time}
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12">
+            <!-- this one is for based on current time displaying greetings -->
+			<div class="greetings">
+				Hello {greetings}!!!!
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" large-device-size="6" medium-device-size="10" small-device-size="12"
+			class="slds-m-top_large">
+			<lightning-layout>
+				<lightning-layout-item size="11">
+                    <!-- this is the input button for creating task records  -->
+					<lightning-input type="text" label="Whats in your mind" variant="label-hidden"
+						placeholder="Whats in your mind" value={inputValue} onchange={inputHandleChange}>
+					</lightning-input>
+				</lightning-layout-item>
+				<lightning-layout-item size="1">
+                    <!-- This one is for creating task Record Button  -->
+					<lightning-button icon-name="utility:add" title="Add TODO" onclick={addToDoHandler}>
+					</lightning-button>
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout-item size="12">
+				<lightning-tabset>
+					<lightning-tab label="UPCOMING TASKS TODOS">
+                        <!-- Here we are doing iterating the created records and displaying in records only buttons completed checkbox button and delete button -->
+						<template for:each={tasks} for:item="todo">
+							<div class="item-class" key={todo.Id}>
+								<span class="slds-text-heading_label spanClass">{todo.Name}</span>
+								<lightning-button-icon icon-name="utility:check" data-id={todo.Id}
+									class="slds-p-horizontal_medium" onclick={updateHandleClick} title="Update ToDo">
+								</lightning-button-icon>
+								<lightning-button-icon icon-name="utility:delete" data-id={todo.Id}
+									class="slds-p-horizontal_medium" onclick={deleteHandleClick} title="Delete ToDo">
+								</lightning-button-icon>
+							</div>
+						</template>
+					</lightning-tab>
+					<lightning-tab label="COMPLETED TODOS TASKS">
+                        <!-- Here we are doing completed tasks iterating and displaying the records in page -->
+						<template for:each={cmpTasks} for:item="todotask">
+							<div class="item-class" key={todotask.Id}>
+								<div class="myrecordnames">
+									<span class="slds-text-heading_label spanClass">{todotask.Name}</span>
+								</div>
+							</div>
+						</template>
+					</lightning-tab>
+				</lightning-tabset>
+			</lightning-layout-item>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

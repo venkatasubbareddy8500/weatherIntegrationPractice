@@ -1,0 +1,42 @@
+.time{
+	color : rgb(27, 211, 27);
+	font-size: 4rem;
+	font-weight: 600;
+}
+
+.greetings {
+font-size: 3rem;
+font-weight: 500;
+color: aquamarine;
+}
+
+.someContainer {
+	background-color: white;
+	padding: 20px;
+	max-height: 480 px;
+	overflow-y: scroll;
+	display: block;
+}
+
+.someclass {
+color: coral;
+}
+
+.spanClass {
+	color: rgb(14, 43, 122);
+}
+
+.myrecordnames{
+	border: 1px solid rgb(205, 253, 178);
+	padding: 0.5rem;
+	width: fit-content;
+	border-radius: 8px;
+	margin-top: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	transition: all 0.5s ease;
+}
+.myrecordnames:hover{
+	background-color: rgb(117, 255, 112);
+	border-radius: 16px;
+}
