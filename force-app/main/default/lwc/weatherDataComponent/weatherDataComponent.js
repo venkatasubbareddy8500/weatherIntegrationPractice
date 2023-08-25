@@ -3,6 +3,7 @@ import getWeatherInformationBasedOnCity from '@salesforce/apex/weatherIntegratio
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class WeatherDataComponent extends LightningElement {
 
+    //name subbareddy
     @track cityInputNameValue = '';
     @track weatherDetails = '';
     @track weatherDescription = '';
