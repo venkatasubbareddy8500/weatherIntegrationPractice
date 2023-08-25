@@ -1,0 +1,79 @@
+<template>
+
+	<lightning-card title="Hello Weather Component" icon-name="standard:address">
+		<lightning-layout multiple-rows="true">
+			<div class="custom-input-container slds-grid slds-wrap">
+				<label class="custom-label" for="cityName">City Name</label>
+				<div class="slds-form-element__control slds-grow slds-grid slds-gutters slds-wrap">
+					<span>
+						<input class="slds-input slds-col slds-size_12-of-12 slds-large-size_12-of-12 custom-input" type="text" style="width: 400px;" id="cityName" placeholder="Enter Valid City Name..." name="name" onfocus={handleFocus} onblur={handleBlur} onchange={inputHandleChange}>
+					</span>
+					<span>
+						<lightning-button  class="slds-col slds-size_1-of-1 slds-large-size_4-of-12" variant="brand" label="Get Weather Data"
+						title="coming data from external Weather Source" onclick={handleClick}></lightning-button>
+					</span>
+				</div>
+			</div>
+
+
+			<lightning-layout-item padding="around-small" size="12">
+				<lightning-layout>
+					<lightning-layout-item padding="around-small" size="8">
+						<img src={imageurl} alt="alternate-text">
+                </lightning-layout-item>
+						<lightning-layout-item padding="around-small" size="3">
+							<template for:each={weatherDetails} for:item="weatherData">
+								<p key={weatherData.cityName}>
+									<span style="
+    				font-style: italic;
+    				font-size: x-large;
+    				color: darkorange;
+					">
+					City Name : {weatherData.cityName}
+					<br>
+            		Country Name : {weatherData.cityCountryName}
+					<br>
+            		TimeZone : {weatherData.cityTimezoneData}
+					<br>
+				</span>
+									<span style="
+    				font-size: large;
+    				font-style: oblique;
+    				font-variant: petite-caps;
+    				color: darkorchid;
+					">
+            		Weather Icon : {weatherData.cityWeatherIcon}
+					<br>
+            		Weather Main : {weatherData.cityWeatherMain}
+					<br>
+           	 		Weather Description : {weatherData.cityWeatherDescription}
+					<br>
+				</span>
+									<span style="
+    				font-weight: 700;
+    				color: darkgreen;
+					">
+            		City Temparature : {weatherData.cityMainResultsTemparature}
+					<br>
+            		City Max Temparature : {weatherData.cityMainResultstempmax}
+					<br>
+            		City Min Temparature : {weatherData.cityMainResultstempmin}
+					<br>
+            		City Humidity : {weatherData.cityMainResultsHumidity}
+					<br>
+            		City Wind Speed : {weatherData.cityWindDataSpeed}
+					<br>
+
+            		City Latitude : {weatherData.cityLatitude}
+					<br>
+            		City Longitude : {weatherData.cityLongitude}
+				</span>
+								</p>
+							</template>
+						</lightning-layout-item>
+				</lightning-layout>
+			</lightning-layout-item>
+		</lightning-layout>
+	</lightning-card>
+
+</template>

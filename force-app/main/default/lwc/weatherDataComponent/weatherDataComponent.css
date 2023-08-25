@@ -1,0 +1,22 @@
+/* cityNameInput.css */
+.custom-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-label {
+    font-size: large;
+    font-style: oblique;
+    font-variant: petite-caps;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+.custom-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.slds-input.custom-input{
+background-color: lavenderblush;
+color:maroon;
+}
